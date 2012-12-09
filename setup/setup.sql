@@ -10,6 +10,9 @@ INSERT INTO `kwf_pools` (`id`, `pool`, `pos`, `value`, `visible`) VALUES
 (10, 'Branches', 4, 'Tourism', 1),
 (11, 'Branches', 5, 'Forschung', 1);
 
+INSERT INTO `kwf_users` (`id`, `role`, `language`, `email`, `password`, `password_salt`, `gender`, `title`, `firstname`, `lastname`, `created`, `deleted`, `locked`, `logins`, `last_login`) VALUES
+(9, 'admin', 'en', 'demo@koala-framework.org', 'b2c5ae6bb7bec6021e3224f316d8a0c0', '684e86989d', 'male', '', 'Koala', 'Framework', '2011-10-25 10:06:07', 0, 0, 2, '2011-10-25 10:50:59');
+
 CREATE TABLE IF NOT EXISTS `members` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
@@ -98,3 +101,21 @@ CREATE TABLE IF NOT EXISTS `member_languages` (
   KEY `member_id` (`member_id`),
   KEY `language_id` (`language_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `links` (
+`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+PRIMARY KEY (`id`),
+KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `link_data` (
+`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`link_id` int(11) unsigned NOT NULL,
+`name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+`value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+`desc` varchar(1024) COLLATE utf8_unicode_ci NOT NULL,
+PRIMARY KEY (`id`),
+KEY `link_id` (`link_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
