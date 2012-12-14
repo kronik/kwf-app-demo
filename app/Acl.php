@@ -33,5 +33,7 @@ class Acl extends Kwf_Acl
         $this->allow('admin', 'default_links');
         $this->allow('admin', 'default_index');
         $this->allow('admin', 'kwf_media_upload');
+        $this->allow('guest', 'kwf_media_upload');
+
     }
 }
