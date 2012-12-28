@@ -25,8 +25,9 @@ class TasksController extends Kwf_Controller_Action_Auto_Grid
         
         $this->_columns->add(new Kwf_Grid_Column('typeId', trl('Type')))
         ->setEditor($select)
-        ->setType('string')
-        ->setShowDataIndex('value');
+        ->setShowDataIndex('type_value');
+
+        $this->_columns->add(new Kwf_Grid_Column('type_value'));
 
         $this->_columns->add(new Kwf_Grid_Column_Date('endDate', trl('End Date'), 100))->setRenderer('checkDate');
     }
