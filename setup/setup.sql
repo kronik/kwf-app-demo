@@ -26,6 +26,21 @@ CREATE TABLE IF NOT EXISTS `tasks` (
     KEY `userId` (`userId`)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE IF NOT EXISTS `lang_clubs` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `title` varchar(300) COLLATE utf8_unicode_ci,
+    PRIMARY KEY (`id`)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `lang_club_groups` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `userId` int NOT NULL,
+    `clubId` int NOT NULL,
+    `langId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `userId` (`userId`)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 CREATE TABLE IF NOT EXISTS `members` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,

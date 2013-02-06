@@ -15,6 +15,8 @@ class Acl extends Kwf_Acl
  
         $this->addResource(new Kwf_Acl_Resource_MenuUrl('default_tasks', array('text'=>trl('Tasks'), 'icon'=>'time.png'), '/tasks'));
 
+        $this->addResource(new Kwf_Acl_Resource_MenuUrl('default_langclubs', array('text'=>trl('Lang clubs'), 'icon'=>'time.png'), '/langclubs'));
+
         $this->addResource(new Zend_Acl_Resource('default_members'), 'default_index');
         $this->addResource(new Zend_Acl_Resource('default_member'), 'default_members');
         $this->addResource(new Zend_Acl_Resource('default_member-contacts'), 'default_members');
@@ -25,6 +27,10 @@ class Acl extends Kwf_Acl
         $this->addResource(new Zend_Acl_Resource('default_link-dataentry'), 'default_link-data');
         
         $this->addResource(new Zend_Acl_Resource('default_task'), 'default_tasks');
+        $this->addResource(new Zend_Acl_Resource('default_langclub'), 'default_langclubs');
+        $this->addResource(new Zend_Acl_Resource('default_langclubgroups'), 'default_langclubs');
+        $this->addResource(new Zend_Acl_Resource('default_langclubgroup'), 'default_langclubgroups');
+        $this->addResource(new Zend_Acl_Resource('default_langclubgroupsfilter'), 'default_langclubgroup');
 
         $this->add(new Kwf_Acl_Resource_MenuUrl('kwf_user_users',
                                                 array('text'=>trlKwf('Users management'), 'icon'=>'user.png'),
@@ -35,6 +41,9 @@ class Acl extends Kwf_Acl
 
         $this->allow('admin', 'default_report');
         $this->allow('admin', 'default_tasks');
+        $this->allow('admin', 'default_langclubgroupsfilter');
+        $this->allow('admin', 'default_langclubgroups');
+        $this->allow('admin', 'default_langclubs');
         $this->allow('admin', 'default_menuitem');
         $this->allow('admin', 'kwf_user_users');        
         $this->allow('admin', 'default_links');
