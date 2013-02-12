@@ -39,6 +39,9 @@ class Acl extends Kwf_Acl
         $this->add(new Zend_Acl_Resource('kwf_user_log'), 'kwf_user_users');
         $this->add(new Zend_Acl_Resource('kwf_user_comments'), 'kwf_user_users');
 
+        $this->addRole(new Zend_Acl_Role('user'));
+        $this->allow('user', 'default_tasks');
+
         $this->allow('admin', 'default_report');
         $this->allow('admin', 'default_tasks');
         $this->allow('admin', 'default_langclubgroupsfilter');

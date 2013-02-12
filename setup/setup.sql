@@ -13,6 +13,9 @@ INSERT INTO `kwf_pools` (`id`, `pool`, `pos`, `value`, `visible`) VALUES
 INSERT INTO `kwf_users` (`id`, `role`, `language`, `email`, `password`, `password_salt`, `gender`, `title`, `firstname`, `lastname`, `created`, `deleted`, `locked`, `logins`, `last_login`) VALUES
 (9, 'admin', 'en', 'demo@koala-framework.org', 'b2c5ae6bb7bec6021e3224f316d8a0c0', '684e86989d', 'male', '', 'Koala', 'Framework', '2011-10-25 10:06:07', 0, 0, 2, '2011-10-25 10:50:59');
 
+INSERT INTO `kwf_users` (`id`, `role`, `language`, `email`, `password`, `password_salt`, `gender`, `title`, `firstname`, `lastname`, `created`, `deleted`, `locked`, `logins`, `last_login`) VALUES
+(10, 'user', 'en', 'demo@gmail.com', 'b2c5ae6bb7bec6021e3224f316d8a0c0', '684e86989d', 'male', '', 'Framework', 'Koala', '2011-10-25 10:06:07', 0, 0, 2, '2011-10-25 10:50:59');
+
 CREATE TABLE IF NOT EXISTS `tasks` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `userId` int NOT NULL,
