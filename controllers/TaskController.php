@@ -35,6 +35,10 @@ class TaskController extends Kwf_Controller_Action_Auto_Form
     {
         $users = Kwf_Registry::get('userModel');
         
+        if ($row->startDate == NULL)
+        {
+            $row->startDate = new DateTime ();
+        }
         $row->userId = $users->getAuthedUserId();
         $row->status = 0;
     }
